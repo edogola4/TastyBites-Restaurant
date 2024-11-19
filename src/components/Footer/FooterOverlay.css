@@ -1,0 +1,135 @@
+.app__footerOverlay {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--color-black);
+    transition: background-color 0.3s ease;
+  }
+  
+  .app__footerOverlay:hover {
+    background-color: var(--color-dark-grey);
+  }
+  
+  .app__footerOverlay-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  .app__footerOverlay-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('your-image-url.jpg'); /* Replace with your custom background image URL */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.7;
+    filter: blur(4px);
+    animation: fadeInBackground 2s ease-in-out;
+  }
+  
+  .app__footerOverlay-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    color: var(--color-white);
+    animation: slideUp 1s ease-out;
+  }
+  
+  .app__footerOverlay-title {
+    font-size: 2.5rem;
+    font-family: var(--font-headline);
+    margin-bottom: 1rem;
+    animation: fadeInText 1s ease-out;
+  }
+  
+  .app__footerOverlay-description {
+    font-size: 1.1rem;
+    font-family: var(--font-base);
+    color: var(--color-light-grey);
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+  
+  .app__footerOverlay-button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-golden);
+    color: var(--color-black);
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .app__footerOverlay-button:hover {
+    background-color: var(--color-bright-golden);
+  }
+  
+  @keyframes fadeInBackground {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @media screen and (max-width: 990px) {
+    .app__footerOverlay-title {
+      font-size: 2rem;
+    }
+  
+    .app__footerOverlay-description {
+      font-size: 1rem;
+    }
+  
+    .app__footerOverlay-button {
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 650px) {
+    .app__footerOverlay {
+      height: 40vh;
+    }
+  
+    .app__footerOverlay-title {
+      font-size: 1.8rem;
+    }
+  
+    .app__footerOverlay-description {
+      font-size: 0.95rem;
+    }
+  }
+  
