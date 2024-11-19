@@ -1,4 +1,4 @@
-import bg from '../assets/bg.png';
+import bg from '../assets/bg.jpg';
 import chef from '../assets/chef.png';
 import G from '../assets/G.png';
 import gallery01 from '../assets/gallery01.png';
@@ -20,8 +20,10 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
+import aboutBackground from'../assets/about-background.jpg';
 
-export default {
+
+const images = {
   bg,
   chef,
   G,
@@ -44,4 +46,7 @@ export default {
   sign,
   quote,
   gericht,
+  aboutBackground,
 };
+
+export default images;

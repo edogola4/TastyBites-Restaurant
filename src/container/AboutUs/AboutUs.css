@@ -3,7 +3,7 @@
     position: relative;
     overflow: hidden;
     background-color: var(--color-light); /* Subtle background to contrast content */
-    background-image: url('path/to/your/image.jpg'); /* Add your background image */
+    background-image: url('../../assets/about-background.jpg');
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
@@ -14,7 +14,8 @@
     position: relative;
     overflow: hidden;
     background-color: var(--color-light); /* Subtle background to contrast content */
-    background-image: url('${images.yourBackgroundImage}'); /* Use the image import from React */
+   /* background-image: url('${images.yourBackgroundImage}');  Use the image import from React */
+    background-image: url('../../assets/about-background.jpg');
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;

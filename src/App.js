@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Importing containers for each section of the website
 import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, SpecialMenu } from './container';
@@ -11,8 +11,26 @@ import './App.css';
 
 // Main application component
 const App = () => {
+  // State to track loading status
+  const [loading, setLoading] = useState(true);
+
+  // useEffect to simulate loading screen behavior (3 seconds delay for demo purposes)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); // Hide the loading animation after 3 seconds
+    }, 3000);
+
+    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+  }, []);
+
   return (
     <div>
+      {loading && (
+        <div className="app__loading">
+          <div className="spinner"></div>
+        </div>
+      )}
+
       {/* Navigation bar: stays consistent across all pages */}
       <Navbar />
 
@@ -47,4 +65,3 @@ const App = () => {
 };
 
 export default App;
-
