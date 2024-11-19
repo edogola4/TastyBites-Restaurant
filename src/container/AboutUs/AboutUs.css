@@ -1,0 +1,263 @@
+/* Parallax Effect */
+.app__aboutus {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-light); /* Subtle background to contrast content */
+    background-image: url('path/to/your/image.jpg'); /* Add your background image */
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh; /* Ensuring full view height for the effect */
+}
+/* Parallax Effect */
+.app__aboutus {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-light); /* Subtle background to contrast content */
+    background-image: url('${images.yourBackgroundImage}'); /* Use the image import from React */
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh; /* Ensuring full view height for the effect */
+}
+
+.app__aboutus-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.app__aboutus-overlay img {
+    width: 391px;
+    height: 415px;
+    z-index: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+.app__aboutus-overlay img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.app__aboutus-content {
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+    gap: 5rem;
+    animation: fadeInUp 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.app__aboutus-content_about,
+.app__aboutus-content_history {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__aboutus-content_about {
+    justify-content: flex-end;
+    text-align: right;
+    animation: fadeInRight 1.2s ease-out;
+}
+
+.app__aboutus-content_knife {
+    margin: 2rem 4rem;
+    flex: 0.5;
+    animation: fadeInLeft 1.2s ease-out;
+}
+
+.app__aboutus-content_knife img {
+    height: 910px;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.app__aboutus-content_knife img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.app__aboutus-content_history {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.app__aboutus-content_about p,
+.app__aboutus-content_history p {
+    margin: 2rem 0;
+    color: var(--color-grey);
+    line-height: 1.8;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.app__aboutus-content_about p:hover,
+.app__aboutus-content_history p:hover {
+    color: var(--color-dark);
+    transform: translateX(10px);
+}
+
+.app__aboutus-content_about button,
+.app__aboutus-content_history button {
+    margin-top: 2rem;
+    padding: 1.2rem 2.5rem;
+    background-color: var(--color-golden);
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app__aboutus-content_about button:hover,
+.app__aboutus-content_history button:hover {
+    background-color: var(--color-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading Animation */
+.app__loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    animation: loadingFadeOut 1s ease-out forwards;
+}
+
+.app__loading .spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid var(--color-dark);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes loadingFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .app__aboutus-content_knife img {
+        height: 1110px;
+    }
+
+    .app__aboutus-content_about p,
+    .app__aboutus-content_history p {
+        margin: 4rem 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .app__aboutus-content {
+        flex-direction: column;
+        padding: 3rem;
+    }
+
+    .app__aboutus-content_knife {
+        margin: 4rem 0;
+    }
+
+    .app__aboutus-content_about,
+    .app__aboutus-content_history {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app__aboutus-overlay img {
+        width: 80%;
+        height: 320px;
+    }
+
+    .app__aboutus-content_knife img {
+        height: 600px;
+    }
+
+    .app__aboutus-content_about p,
+    .app__aboutus-content_history p {
+        font-size: 0.9rem;
+    }
+
+    .app__aboutus-content_about button,
+    .app__aboutus-content_history button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
