@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-base: 'Cormorant Upright', serif;
+  --font-alt: 'Open Sans', sans-serif;
+
+  --color-primary: #DCCA87; /* Golden */
+  --color-secondary: #F5EFDB; /* Crimson Beige */
+  --color-accent: #AAAAAA; /* Neutral Gray */
+  --color-dark: #0C0C0C; /* Black */
+  --color-light: #FFFFFF; /* White */
+
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.3s ease-in-out;
+  --transition-medium: 0.5s ease-in-out;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-alt);
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-dark);
+}
+
+button {
+  font-family: var(--font-alt);
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+button:hover {
+  background-color: var(--color-dark);
+  transform: translateY(-5px) scale(1.05);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-base);
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+  animation: fade-in var(--transition-medium) ease-in-out;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slide-bottom {
+  animation: slide-bottom var(--transition-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
