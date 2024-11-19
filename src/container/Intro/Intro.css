@@ -1,0 +1,82 @@
+.app__video {
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Prevents any overflow from the video */
+    background: #000; /* Black background to match the video overlay */
+  }
+  
+  .app__video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity changes */
+  }
+  
+  .app__video-overlay {
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  }
+  
+  .app__video:hover .app__video-overlay {
+    opacity: 1; /* Show overlay when video is hovered */
+  }
+  
+  .app__video-overlay_circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #DCCA87; /* Golden border */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions for hover effects */
+  }
+  
+  .app__video-overlay_circle:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    background-color: rgba(0, 0, 0, 0.9); /* Darken the background on hover */
+    border-color: #DCCA87; /* Highlight the border color on hover */
+  }
+  
+  .app__video-overlay_circle svg {
+    transition: transform 0.3s ease; /* Smooth transition for icon */
+  }
+  
+  .app__video-overlay_circle:hover svg {
+    transform: scale(1.2); /* Slightly enlarge the play/pause icon on hover */
+    color: #DCCA87; /* Change icon color to golden on hover */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .app__video-overlay_circle {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .app__video-overlay_circle svg {
+      font-size: 35px; /* Adjust icon size on smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .app__video-overlay_circle {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .app__video-overlay_circle svg {
+      font-size: 30px; /* Further adjust icon size on very small screens */
+    }
+  }
+  
