@@ -40,3 +40,9 @@
 - **Plan Your Meal:** Browse the menu before visiting the restaurant.
 - **Book a Table:** Reserve seats quickly for any occasion.
 - **Explore Offers:** Stay informed about promotions and seasonal specials.
+
+  ## Contributing:
+- Contributions are always welcome! To improve TastyBites or report issues, submit a pull request or open an issue in the repository.
+
+
+
