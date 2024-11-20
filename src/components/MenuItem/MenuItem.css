@@ -130,3 +130,31 @@
         height: 100px;
     }
 }
+
+
+/**additional
+.app__menuitem-sub {
+    font-size: 0.95rem;
+    color: #C0C0C0;
+    margin-top: 0.5rem;
+  }
+  
+  .app__menuitem-details {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .app__menuitem-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .app__menuitem-name p {
+    font-size: 1.3rem;
+    color: #DCCA87;
+  }
+  */
