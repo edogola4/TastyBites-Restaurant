@@ -10,3 +10,11 @@
 3. **Special Offers:** Stay updated on discounts and limited-time promotions.
 4. **Restaurant Overview:** Learn about TastyBites' story, vision, and location details.
 5. **Responsive Design:** Delivers an optimal experience on mobile, tablet, and desktop devices.
+
+## Technology Stack:
+### Frontend:
+- **React:** Component-based framework for building dynamic UIs.
+- **CSS3:** Styling to create a visually appealing design.
+- **JavaScript (ES6):** Adds interactivity and functionality.
+### Backend:
+- **JSON Server:** Simulates a REST API to handle static data such as menu items and reservations.
