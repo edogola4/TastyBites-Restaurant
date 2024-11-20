@@ -25,3 +25,6 @@
  ## Deployment:
 - **Netlify:** For hosting and deployment, ensuring fast and reliable access.
 
+## Development Tools:
+- *Modular React components for scalability and maintainability.*
+- *Browser Developer Tools for debugging and optimizing performance.*
