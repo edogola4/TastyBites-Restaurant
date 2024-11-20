@@ -23,7 +23,7 @@
 - **External APIs:** Fetch real-time data for reservations or additional restaurant services.
 
  ## Deployment:
-- **Netlify:** For hosting and deployment, ensuring fast and reliable access.
+- **Vercel:** For hosting and deployment, ensuring fast and reliable access.
 
 ## Development Tools:
 - *Modular React components for scalability and maintainability.*
