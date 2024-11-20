@@ -6,13 +6,14 @@
     padding: 1rem;
     background-color: #2c2c2c;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .app__menuitem:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #3c3c3c; /* Subtle lightening effect */
 }
 
 .app__menuitem-image {
@@ -22,6 +23,11 @@
     border-radius: 8px;
     overflow: hidden;
     flex-shrink: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.app__menuitem-image:hover {
+    transform: scale(1.05); /* Zoom effect on image */
 }
 
 .app__menuitem-img {
@@ -30,7 +36,7 @@
     object-fit: cover;
 }
 
-.app__menuitem-head {
+.app__menuitem-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,6 +49,11 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
+    transition: color 0.3s ease;
+}
+
+.app__menuitem-name:hover {
+    color: #dcca87; /* Highlighted color for title */
 }
 
 .app__menuitem-dash {
@@ -50,6 +61,11 @@
     height: 1px;
     background: var(--color-golden);
     margin: 0 1rem;
+    transition: width 0.3s ease;
+}
+
+.app__menuitem-dash:hover {
+    width: 110px; /* Slight expansion effect */
 }
 
 .app__menuitem-price {
@@ -59,11 +75,26 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.app__menuitem-price:hover {
+    color: #dcca87;
+    font-weight: 600; /* Slightly bolder */
 }
 
 .app__menuitem-sub {
     width: 100%;
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.app__menuitem-sub p {
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.app__menuitem-sub p:hover {
+    color: #ffffff; /* Highlighted description */
+    font-size: 1.05rem;
 }
 
 .p__cormorant {
@@ -80,7 +111,7 @@
         padding: 0.8rem;
     }
 
-    .app__menuitem-head {
+    .app__menuitem-header {
         flex-direction: column;
         align-items: flex-start;
     }

@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.yourLogo} alt="restaurant_logo" /> {/* Replace with your logo */}
+        <img src={images.G} alt="restaurant_logo" /> {/* Replace with your logo */}
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans"><a href="#home">Home</a></li>

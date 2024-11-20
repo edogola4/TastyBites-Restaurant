@@ -37,16 +37,18 @@
 }
 
 .app__navbar-links li {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
     cursor: pointer;
     font-family: var(--font-heading);
     font-size: 1.1rem;
     color: var(--color-white);
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .app__navbar-links li:hover {
     color: var(--color-golden);
+    text-shadow: 0px 0px 5px var(--color-golden); /* Add a glowing effect */
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 .app__navbar-login {
@@ -61,12 +63,15 @@
     font-family: var(--font-base);
     font-size: 1rem;
     color: var(--color-white);
-    transition: border-bottom 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
 .app__navbar-login a:hover {
-    border-bottom: 1px solid var(--color-golden);
-    color: var(--color-golden); /* Gold hover effect */
+    background-color: var(--color-golden); /* Add background color on hover */
+    color: var(--color-black); /* Switch text color for contrast */
+    border-bottom: none;
 }
 
 .app__navbar-login div {
@@ -111,11 +116,13 @@
     font-size: 2rem;
     text-align: center;
     font-family: var(--font-base);
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .app__navbar-smallscreen_links li:hover {
     color: var(--color-white);
+    text-shadow: 0px 0px 5px var(--color-white); /* Add glow effect */
+    transform: scale(1.2); /* Add slight zoom effect */
 }
 
 @keyframes fadeIn {
