@@ -39,6 +39,9 @@
 ## Usage Scenarios:
 - **Plan Your Meal:** Browse the menu before visiting the restaurant.
 - **Book a Table:** Reserve seats quickly for any occasion.
+
+  ## License:
+- This project does not currently have a specified license. Feel free to use and modify the app as needed.
 - **Explore Offers:** Stay informed about promotions and seasonal specials.
 
   ## Contributing:
