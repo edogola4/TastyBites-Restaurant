@@ -1,135 +1,154 @@
 .app__footerOverlay {
-    position: relative;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: var(--color-black);
-    transition: background-color 0.3s ease;
+  position: relative;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-black);
+  transition: background-color 0.3s ease;
+}
+
+.app__footerOverlay:hover {
+  background-color: var(--color-dark-grey);
+}
+
+.app__footerOverlay-black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  backdrop-filter: blur(2px);
+}
+
+.app__footerOverlay-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/footer-background.jpg'); /* Replace with a high-quality image */
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 0.8;
+  filter: blur(6px);
+  animation: zoomIn 15s infinite alternate ease-in-out;
+}
+
+.app__footerOverlay-content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  color: var(--color-white);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.app__footerOverlay-title {
+  font-size: 2.5rem;
+  font-family: var(--font-headline);
+  margin-bottom: 1rem;
+  animation: fadeInText 1.2s ease-in;
+}
+
+.app__footerOverlay-description {
+  font-size: 1.2rem;
+  font-family: var(--font-base);
+  color: var(--color-light-grey);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  animation: fadeInText 1.5s ease-in;
+}
+
+.app__footerOverlay-button {
+  padding: 0.75rem 1.8rem;
+  background-color: var(--color-golden);
+  color: var(--color-black);
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.app__footerOverlay-button:hover {
+  background-color: var(--color-bright-golden);
+  transform: scale(1.05);
+}
+
+.app__footerOverlay-glow {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 223, 88, 0.4), transparent);
+  z-index: 1;
+  animation: glowPulse 2.5s infinite alternate;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.05);
   }
-  
-  .app__footerOverlay:hover {
-    background-color: var(--color-dark-grey);
+  to {
+    transform: scale(1.1);
   }
-  
-  .app__footerOverlay-black {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .app__footerOverlay-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('../../assets/footer-background.jpg'); /* Replace with your custom background image URL */
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    opacity: 0.7;
-    filter: blur(4px);
-    animation: fadeInBackground 2s ease-in-out;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .app__footerOverlay-content {
-    position: relative;
-    text-align: center;
-    z-index: 2;
-    color: var(--color-white);
-    animation: slideUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  .app__footerOverlay-title {
-    font-size: 2.5rem;
-    font-family: var(--font-headline);
-    margin-bottom: 1rem;
-    animation: fadeInText 1s ease-out;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .app__footerOverlay-description {
-    font-size: 1.1rem;
-    font-family: var(--font-base);
-    color: var(--color-light-grey);
-    margin-bottom: 1.5rem;
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
     opacity: 0.8;
+    transform: scale(1.2);
   }
-  
-  .app__footerOverlay-button {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--color-golden);
-    color: var(--color-black);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .app__footerOverlay {
+    height: 40vh;
+  }
+
+  .app__footerOverlay-title {
+    font-size: 2rem;
+  }
+
+  .app__footerOverlay-description {
     font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
-  
-  .app__footerOverlay-button:hover {
-    background-color: var(--color-bright-golden);
+
+  .app__footerOverlay-button {
+    padding: 0.6rem 1.2rem;
   }
-  
-  @keyframes fadeInBackground {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0.7;
-    }
-  }
-  
-  @keyframes fadeInText {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideUp {
-    0% {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @media screen and (max-width: 990px) {
-    .app__footerOverlay-title {
-      font-size: 2rem;
-    }
-  
-    .app__footerOverlay-description {
-      font-size: 1rem;
-    }
-  
-    .app__footerOverlay-button {
-      padding: 0.5rem 1rem;
-    }
-  }
-  
-  @media screen and (max-width: 650px) {
-    .app__footerOverlay {
-      height: 40vh;
-    }
-  
-    .app__footerOverlay-title {
-      font-size: 1.8rem;
-    }
-  
-    .app__footerOverlay-description {
-      font-size: 0.95rem;
-    }
-  }
-  
+}

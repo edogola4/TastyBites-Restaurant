@@ -5,86 +5,74 @@
     --color-grey: #b0b0b0;
     --font-base: 'Lora', serif;
     --font-heading: 'Montserrat', sans-serif;
-}
-
-.app__navbar {
+  }
+  
+  .app__navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--color-black);
     padding: 1rem 2rem;
-    animation: fadeIn 1s ease-in-out; /* Fade-in effect for navbar */
-}
-
-.app__navbar-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    animation: bounceIn 1s ease-in-out; /* Logo bounce-in animation */
-}
-
-.app__navbar-logo img {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .app__navbar-logo-img {
     width: 150px;
-}
-
-.app__navbar-links {
-    flex: 1;
+  }
+  
+  .app__navbar-links {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
-}
-
-.app__navbar-links li {
+  }
+  
+  .app__navbar-links li {
     margin: 0 1rem;
     cursor: pointer;
     font-family: var(--font-heading);
     font-size: 1.1rem;
     color: var(--color-white);
     transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.app__navbar-links li:hover {
+  }
+  
+  .app__navbar-links li:hover {
     color: var(--color-golden);
-    text-shadow: 0px 0px 5px var(--color-golden); /* Add a glowing effect */
-    transform: scale(1.1); /* Slight zoom effect */
-}
-
-.app__navbar-login {
+    text-shadow: 0px 0px 5px var(--color-golden);
+  }
+  
+  .app__navbar-login {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-}
-
-.app__navbar-login a {
+  }
+  
+  .app__navbar-login a {
     margin: 0 1.5rem;
     text-decoration: none;
     font-family: var(--font-base);
-    font-size: 1rem;
     color: var(--color-white);
     transition: background-color 0.3s ease, color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-}
-
-.app__navbar-login a:hover {
-    background-color: var(--color-golden); /* Add background color on hover */
-    color: var(--color-black); /* Switch text color for contrast */
-    border-bottom: none;
-}
-
-.app__navbar-login div {
+  }
+  
+  .app__navbar-login a:hover {
+    background-color: var(--color-golden);
+    color: var(--color-black);
+  }
+  
+  .app__navbar-login div {
     width: 1px;
     height: 30px;
     background: var(--color-grey);
-}
-
-.app__navbar-smallscreen {
+  }
+  
+  .app__navbar-smallscreen {
     display: none;
-}
-
-.app__navbar-smallscreen_overlay {
+  }
+  
+  .app__navbar-smallscreen_overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -93,101 +81,52 @@
     background: var(--color-black);
     flex-direction: column;
     z-index: 5;
-    animation: slideIn 0.5s ease-in-out; /* Slide-in animation for the overlay */
-}
-
-.app__navbar-smallscreen_overlay .overlay__close {
-    font-size: 27px;
-    color: var(--color-golden);
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.app__navbar-smallscreen_links {
-    list-style: none;
-}
-
-.app__navbar-smallscreen_links li {
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  .app__navbar-smallscreen_links li {
     margin: 2rem;
-    cursor: pointer;
     color: var(--color-golden);
     font-size: 2rem;
     text-align: center;
     font-family: var(--font-base);
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.app__navbar-smallscreen_links li:hover {
+  }
+  
+  .app__navbar-smallscreen_links li:hover {
     color: var(--color-white);
-    text-shadow: 0px 0px 5px var(--color-white); /* Add glow effect */
-    transform: scale(1.2); /* Add slight zoom effect */
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: translateY(-1000px);
-        opacity: 0;
-    }
-    60% {
-        transform: translateY(30px);
-        opacity: 1;
-    }
-    80% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@media screen and (min-width: 2000px) {
-    .app__navbar-logo img {
-        width: 210px;
-    }
-}
-
-@media screen and (max-width: 1150px) {
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+  
+  @media screen and (max-width: 1150px) {
     .app__navbar-links {
-        display: none;
+      display: none;
     }
-
+  
     .app__navbar-smallscreen {
-        display: flex;
+      display: flex;
     }
-}
-
-@media screen and (max-width: 650px) {
+  }
+  
+  @media screen and (max-width: 650px) {
     .app__navbar {
-        padding: 1rem;
+      padding: 1rem;
     }
-
+  
     .app__navbar-login {
-        display: none;
+      display: none;
     }
-
-    .app__navbar-logo img {
-        width: 110px;
+  
+    .app__navbar-logo-img {
+      width: 110px;
     }
-}
+  }
+  

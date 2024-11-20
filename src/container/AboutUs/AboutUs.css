@@ -1,4 +1,4 @@
-/* Background and Overlay */
+/* General Section Styling */
 .app__aboutus {
   position: relative;
   padding: 4rem 2rem;
@@ -13,44 +13,65 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-}
-
-.app__aboutus-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
   animation: fade-in 2s ease-in-out;
 }
 
-/* Headings Styling */
 .headtext__cormorant {
   font-family: 'Cormorant Garamond', sans-serif;
   font-size: 3.2rem;
   font-weight: bold;
   text-align: center;
-  color: #FFD700; /* Gold */
+  color: #FFD700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  animation: slide-in-left 1.5s ease-out;
   margin-bottom: 1rem;
+  animation: slide-in-left 1.5s ease-out;
 }
 
-/* Paragraphs */
-.p__opensans {
-  font-family: 'Open Sans', sans-serif;
+/* Box Styling */
+.box {
+  background: rgba(255, 255, 255, 0.1); /* Transparent box */
+  border: 1px solid #FFD700;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  animation: scale-up 1.5s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box1 {
+  font-family: 'Lato', sans-serif;
+  animation-delay: 0.5s;
+}
+
+.box2 {
+  font-family: 'Montserrat', sans-serif;
+  animation-delay: 0.8s;
+}
+
+.box3 {
+  font-family: 'Roboto', sans-serif;
+  animation-delay: 1.1s;
+}
+
+.box4 {
+  font-family: 'Playfair Display', serif;
+  animation-delay: 1.4s;
+}
+
+/* Paragraph Styling */
+.p__lato,
+.p__montserrat,
+.p__roboto,
+.p__playfair {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #d3d3d3;
-  margin: 1rem 0;
-  text-align: justify;
-  animation: slide-in-up 1.2s ease-out;
+  margin: 0;
 }
 
-/* Buttons */
+/* Button Styling */
 .custom__button {
-  background: rgba(255, 255, 255, 0.2); /* Glass effect */
+  background: rgba(255, 255, 255, 0.2);
   border: 2px solid #FFD700;
   color: #FFD700;
   padding: 0.8rem 2rem;
@@ -63,7 +84,7 @@
   backdrop-filter: blur(5px);
   text-align: center;
   display: inline-block;
-  animation: glow-effect 2s infinite ease-in-out;
+  animation: bounce 2s infinite ease-in-out;
 }
 
 .custom__button:hover {
@@ -73,18 +94,79 @@
   box-shadow: 0 4px 10px rgba(255, 165, 0, 0.4);
 }
 
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
 /* Knife Image */
 .knife__img {
-  width: 60%;
-  max-width: 350px;
+  height: calc(100% + 20px); /* Slightly taller than the boxes */
+  max-height: 500px; /* Optional: Set a reasonable maximum height */
+  width: auto; /* Maintain aspect ratio */
+  animation: rotate-animation 3s infinite linear;
+  filter: drop-shadow(4px 8px 6px rgba(0, 0, 0, 0.5));
   animation: rotate-animation 3s infinite linear;
   filter: drop-shadow(4px 8px 6px rgba(0, 0, 0, 0.5));
 }
 
-/* Decorative Spoon */
-.spoon__img {
-  width: 50px;
-  animation: pulse-animation 2s infinite;
+/* Ensure the boxes have a fixed height for comparison *
+.box {
+  height: 150px; * Adjust height as needed for uniformity *
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #FFD700;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  animation: scale-up 1.5s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}*/
+@media (max-width: 768px) {
+  .knife__img {
+    height: calc(100% + 10px); /* Slightly shorter on smaller screens */
+    max-height: 150px; /* Adjust for smaller viewports */
+  }
+
+  .box {
+    height: 120px; /* Reduce box height for smaller screens */
+  }
 }
 
 /* Animations */

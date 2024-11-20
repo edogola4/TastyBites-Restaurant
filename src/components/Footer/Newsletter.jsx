@@ -12,11 +12,12 @@ const Newsletter = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simple email validation
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (emailRegex.test(email)) {
       setMessageVisible(true);
       setValidEmail(true);
+      setTimeout(() => setMessageVisible(false), 3000); // Auto-hide success message
+      setEmail(''); // Clear the input
     } else {
       setValidEmail(false);
     }
@@ -30,21 +31,27 @@ const Newsletter = () => {
         <p className="p__opensans">Get the latest updates, offers, and news directly in your inbox!</p>
       </div>
       <div className="app__newsletter-input flex__center">
-        <input 
-          type="email" 
+        <input
+          type="email"
           value={email}
-          onChange={handleEmailChange} 
-          placeholder="Enter your email address" 
-          className={!validEmail ? 'invalid' : ''}
+          onChange={handleEmailChange}
+          placeholder="Enter your email address"
+          className={!validEmail ? 'invalid shake' : ''}
         />
-        <button type="button" onClick={handleSubmit} className="custom__button">Subscribe Now</button>
+        <button type="button" onClick={handleSubmit} className="custom__button">
+          Subscribe Now
+        </button>
       </div>
       {messageVisible && (
-        <p className="app__newsletter-success-message visible">
+        <p className="app__newsletter-success-message visible slide-up">
           Thank you for subscribing! We'll keep you updated.
         </p>
       )}
-      {!validEmail && <p className="app__newsletter-success-message" style={{ color: 'red' }}>Please enter a valid email address.</p>}
+      {!validEmail && (
+        <p className="app__newsletter-error-message fade-in">
+          Please enter a valid email address.
+        </p>
+      )}
     </div>
   );
 };

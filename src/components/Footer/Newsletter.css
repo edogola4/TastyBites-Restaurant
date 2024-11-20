@@ -1,130 +1,150 @@
 .app__newsletter {
-    padding: 2rem 4rem;
-    border: 1px solid var(--color-golden);
-    background: var(--color-black);
-    border-radius: 8px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .app__newsletter:hover {
-    transform: scale(1.02);
-  }
-  
-  .app__newsletter-heading {
-    text-align: center;
-    animation: fadeIn 1s ease-out;
-  }
-  
-  .app__newsletter-input {
-    display: flex;
-    flex-direction: row;
-    margin-top: 3rem;
-    justify-content: center;
-    animation: slideIn 1s ease-out;
-  }
-  
-  .app__newsletter-input input {
-    width: 620px;
-    border: 1px solid var(--color-golden);
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: var(--font-base);
-    color: var(--color-white);
-    margin-right: 2rem;
-    padding: 0.75rem 1rem;
-    background: var(--color-black);
-    transition: border-color 0.3s ease;
-  }
-  
-  .app__newsletter-input input:focus {
-    border-color: var(--color-bright-golden);
-    outline: none;
-  }
-  
-  .app__newsletter-input button {
-    width: max-content;
-    padding: 0.75rem 1.5rem;
-    background: var(--color-golden);
-    border-radius: 5px;
-    color: var(--color-black);
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .app__newsletter-input button:hover {
-    background: var(--color-bright-golden);
-  }
-  
-  .app__newsletter-success-message {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    color: var(--color-golden);
-    font-family: var(--font-base);
+  padding: 2rem 4rem;
+  border: 1px solid var(--color-golden);
+  background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark-gray) 100%);
+  border-radius: 12px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.app__newsletter:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.app__newsletter-heading {
+  text-align: center;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.app__newsletter-input {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  justify-content: center;
+  animation: slideIn 0.8s ease-out;
+}
+
+.app__newsletter-input input {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid var(--color-golden);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-base);
+  color: var(--color-white);
+  margin-right: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-black);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app__newsletter-input input:focus {
+  border-color: var(--color-bright-golden);
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
+}
+
+.app__newsletter-input input.invalid {
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.1);
+  animation: shake 0.5s ease-in-out;
+}
+
+.app__newsletter-input button {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-golden);
+  border-radius: 8px;
+  color: var(--color-black);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.app__newsletter-input button:hover {
+  background: var(--color-bright-golden);
+  transform: translateY(-2px);
+}
+
+.app__newsletter-success-message {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--color-golden);
+  font-family: var(--font-base);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+}
+
+.app__newsletter-success-message.visible {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.app__newsletter-error-message {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: red;
+  font-family: var(--font-base);
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  0% {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transform: translateY(-20px);
   }
-  
-  .app__newsletter-success-message.visible {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-5px);
+  }
+  40%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+}
+
+@media screen and (max-width: 768px) {
+  .app__newsletter-input {
+    flex-direction: column;
   }
-  
-  @keyframes slideIn {
-    0% {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+
+  .app__newsletter-input input {
+    margin: 0 0 1rem 0;
+    width: 100%;
   }
-  
-  @media screen and (min-width: 2000px) {
-    .app__newsletter-input input {
-      font-size: 2rem;
-    }
+
+  .app__newsletter {
+    padding: 2rem 1rem;
   }
-  
-  @media screen and (max-width: 990px) {
-    .app__newsletter-input {
-      flex-direction: column;
-      width: 100%;
-    }
-  
-    .app__newsletter-input input {
-      margin: 0 0 2rem 0;
-      width: 100%;
-    }
-  }
-  
-  @media screen and (max-width: 650px) {
-    .app__newsletter {
-      padding: 2rem 0;
-      border: none;
-    }
-  }
-  
-  @media screen and (max-width: 300px) {
-    .app__newsletter-heading h1 {
-      font-size: 32px;
-      line-height: 50px;
-    }
-  }
-  .app__newsletter-input input.invalid {
-    border-color: red;
-    background-color: rgba(255, 0, 0, 0.1);
-  }
-  
+}

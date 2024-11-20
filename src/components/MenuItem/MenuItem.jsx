@@ -4,7 +4,11 @@ import './MenuItem.css';
 const MenuItem = ({ title, price, tags, description, image }) => (
   <div className="app__menuitem" title={`Learn more about ${title}`}>
     <div className="app__menuitem-image">
-      <img src={image} alt={title} className="app__menuitem-img" />
+      <img
+        src={image}
+        alt={title}
+        className="app__menuitem-img"
+      />
     </div>
 
     <div className="app__menuitem-details">
