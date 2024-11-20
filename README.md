@@ -21,3 +21,7 @@
 
  ## API Integration:
 - **External APIs:** Fetch real-time data for reservations or additional restaurant services.
+
+ ## Deployment:
+- **Netlify:** For hosting and deployment, ensuring fast and reliable access.
+
