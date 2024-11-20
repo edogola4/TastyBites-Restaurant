@@ -18,3 +18,6 @@
 - **JavaScript (ES6):** Adds interactivity and functionality.
 ### Backend:
 - **JSON Server:** Simulates a REST API to handle static data such as menu items and reservations.
+
+ ## API Integration:
+- **External APIs:** Fetch real-time data for reservations or additional restaurant services.
