@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { FiFacebook, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { FaTwitter } from 'react-icons/fa'; // Optional: if you have an icon for X or use SVG
 
 import { FooterOverlay, Newsletter } from '../../components';
 import { images } from '../../constants';
@@ -25,10 +26,10 @@ const Footer = () => (
         </p>
         <img src={images.spoon} className="spoon__img" style={{ marginTop: 15 }} alt="decorative-spoon" />
         <div className="app__footer-links_icons">
-          <FiFacebook className="social-icon" />
-          <FiTwitter className="social-icon" />
-          <FiInstagram className="social-icon" />
-          <FiLinkedin className="social-icon" />
+          <FiFacebook className="social-icon facebook" />
+          <FaTwitter className="social-icon twitter" /> {/* Replace FiTwitter with FaXTwitter */}
+          <FiInstagram className="social-icon instagram" />
+          <FiLinkedin className="social-icon linkedin" />
         </div>
       </div>
 
@@ -48,4 +49,3 @@ const Footer = () => (
 );
 
 export default Footer;
-

@@ -2,16 +2,13 @@
     width: 100%;
     position: relative;
     z-index: 1;
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-
     background: var(--color-black);
     padding-top: 0;
     color: var(--color-white);
-
     animation: fadeIn 1s ease-out;
 }
 
@@ -20,11 +17,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
     margin-top: 5rem;
     padding: 0 2rem;
     flex-wrap: wrap;
-
     animation: slideIn 1.5s ease-out;
 }
 
@@ -59,11 +54,26 @@
     margin: 0.5rem;
     font-size: 24px;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.app__footer-links_icons svg:hover {
-    color: var(--color-golden);
+.app__footer-links_icons .facebook:hover {
+    color: #3b5998;
+    transform: scale(1.2);
+}
+
+.app__footer-links_icons .twitter:hover {
+    color: #1da1f2; /* Twitter blue */
+    transform: scale(1.2);
+}
+
+.app__footer-links_icons .instagram:hover {
+    color: #e1306c;
+    transform: scale(1.2);
+}
+
+.app__footer-links_icons .linkedin:hover {
+    color: #0077b5;
     transform: scale(1.2);
 }
 
