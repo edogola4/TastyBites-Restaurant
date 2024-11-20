@@ -28,3 +28,11 @@
 ## Development Tools:
 - *Modular React components for scalability and maintainability.*
 - *Browser Developer Tools for debugging and optimizing performance.*
+
+  ## Future Improvements:
+- **Online Ordering:** Enable users to order food directly from the app.
+- **Customer Reviews:** Add a section for user feedback and ratings.
+- **Multilingual Support:** Cater to a global audience with language options.
+- **Enhanced Accessibility:** Improve support for screen readers and keyboard navigation.
+- **Push Notifications:** Notify users about new offers and events in real-time.
+
