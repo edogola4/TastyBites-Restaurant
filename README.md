@@ -47,5 +47,7 @@
 ## Contributing:
 - Contributions are always welcome! To improve TastyBites or report issues, submit a pull request or open an issue in the repository.
 
+## Acknowledgments:
+Special thanks to myself as the contributor and users for their support and feedback in making TastyBites a delightful experience for everyone.
 
 
